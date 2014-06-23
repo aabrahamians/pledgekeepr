@@ -11,11 +11,10 @@ def index
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Thank you for signing up!"
-      session[:remember_token] = @user.id
-      @current_user = @user
-      redirect_to users_path
+      session[:remember_token] = @user.id.to_s
+      redirect_to groups_path
     else
-      render :new
+      render :root
     end 
   end
 
@@ -29,7 +28,7 @@ def index
 
   def update
     @user = User.find(params[:id])
-    if @user.update(params.require(:user).permit(:name, :email, :phone, :role, :quota))
+    if @user.update(params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone, :quota, :role))
       redirect_to users_path
     else
       render 'edit'

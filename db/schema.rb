@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140623002421) do
+ActiveRecord::Schema.define(version: 20140623010353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,18 +31,17 @@ ActiveRecord::Schema.define(version: 20140623002421) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "User_id"
   end
-
-  add_index "groups", ["User_id"], name: "index_groups_on_User_id", using: :btree
 
   create_table "member_chores", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "chore_id"
+    t.integer  "user_id"
   end
 
   add_index "member_chores", ["chore_id"], name: "index_member_chores_on_chore_id", using: :btree
+  add_index "member_chores", ["user_id"], name: "index_member_chores_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -54,6 +53,7 @@ ActiveRecord::Schema.define(version: 20140623002421) do
     t.integer  "phone"
     t.integer  "group_id"
     t.string   "password_digest"
+    t.string   "password_confirmation"
   end
 
   add_index "users", ["group_id"], name: "index_users_on_group_id", using: :btree

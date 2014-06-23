@@ -1,8 +1,9 @@
 Pledgekeepr::Application.routes.draw do
  
- resource :sessions, only: [:new, :create, :destroy]
+ resources :sessions, only: [:new, :create, :destroy]
  resources :users
- root 'sessions#new'
+ resources :groups
+ root 'groups#index'
 
 
 
