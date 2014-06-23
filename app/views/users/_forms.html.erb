@@ -1,0 +1,52 @@
+<%= form_for User.new do |u| %>
+        
+<body>
+
+            <div class="row">
+                <div class="small-6  small-offset-3 columns">
+                    <h1><strong>Let's get started</strong></h1>
+
+                    <form role="form">
+                        <div class="form-group">
+                        <%= u.text_field :name, :placeholder => " Name"  %>
+                        </div>
+                        <div class="form-group">
+                        <%= u.text_field :email, :placeholder => "Email"  %>
+                        </div>
+                        <div class="form-group">
+                        <%= u.password_field :password, :placeholder => "Password"  %>
+                        </div>
+                       <!--  <div class="form-group">
+                          <%= u.password_field :password_confirmation,       :placeholder => "Password confirmation" %>
+                        </div> -->
+                         <div class="form-group">
+                        <%= u.text_field :phone, :placeholder => "Phone Number"  %>
+                        </div>
+                    
+                      <label>
+                        <select>
+                          <option value="">--role--</option>  
+                          <option value="Admin">Admin</option>  
+                          <option value="Pledge">Pledge</option>
+                        </select>
+                      </label>
+             
+                        <div class="form-group">
+                            <%= u.submit "Sign-Up", class: 'button success' %>
+                        </div>
+                    </form>
+
+                   
+                    <div>
+                        <%=link_to "Already a member? Log in", new_session_path, class: 'button alert' %>
+                    </div>
+            </div>
+            <div class="login-popup">
+            
+            </div>
+        </div>
+       
+</body>
+
+                
+<% end %>

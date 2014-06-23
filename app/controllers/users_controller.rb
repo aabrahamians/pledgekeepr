@@ -12,9 +12,9 @@ def index
     if @user.save
       flash[:success] = "Thank you for signing up!"
       session[:remember_token] = @user.id.to_s
-      redirect_to groups_path
+      redirect_to new_sessions_path
     else
-      render :root
+      render :new
     end 
   end
 

@@ -12,3 +12,44 @@
  *= require foundation_and_overrides
  *= require_tree .
  */
+
+
+
+.navbar{
+	width: 100%;
+	height: 65px;
+	background-color: rgba(84,24,119,0.7);
+	
+}
+
+.navlinks{
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+	float: right;
+	margin-top: 20px;
+	margin-right: 25px;
+}
+#logo {
+	margin: 10px;
+	width: 268px;
+	height: 44px;
+}
+
+.staticpage {
+	width: 100%;
+	height:705px;
+	overflow:hidden; 
+}
+
+#signupmodal {
+	background-color: rgba(255,255,255,0.20);
+	border-radius: 10px;
+}
+
+#loginmodal {
+	background-color: rgba(255,255,255,0.20);
+	width: 480px;
+	height: 450px;
+	border-radius: 10px;
+}

@@ -2,7 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.membersbox {
+	margin: 0 auto;
+	height: 150px;
+	border:2px dotted lime;
+		p{
+			display:inline-block;
+			margin:5px;
+			font-size: 1.5em;
+		}
+	}
+.progressbarbanner{
+	font-size: 3em;
+}
 
 .groupbox {
 	border: 2px solid black;
