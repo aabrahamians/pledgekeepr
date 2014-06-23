@@ -1,3 +1,46 @@
-<%= @users each do |u| %>
 
-<%= s.name %>
+<p class="adminwelcomebanner">hi</p>
+
+
+<div class="small-6 column">
+	<% @groups.each do |g| %>
+	<div class="groupbox">
+		<%= link_to group_path(g) do %>
+		<p class="groupname"><%= g.name %></p>
+      <%end%>
+		<div class="groupboxmembers">
+			<p class="members">john, joe, bill</p>
+		</div>
+	</div>
+		<% end %>
+		<div class="groupbox" id="newgroup">
+		<a href="#" data-reveal-id="myModal">Create New Group</a>
+		<div id="myModal" class="reveal-modal" data-reveal>
+			<%= form_for Group.new do |u| %>
+		  <div class="row">
+		                <div class="small-6  small-offset-3 columns">
+		                    <h1><strong>Let's get started</strong></h1>
+
+		                    <form role="form">
+		                        <div class="form-group">
+		                        <%= u.text_field :name, :placeholder => " Name"  %>
+		                        </div>
+		 
+		                        <div class="form-group">
+		                            <%= u.submit "Create", class: 'button success' %>
+		                        </div>
+		                    </form>
+		                    </div>
+			</div>
+			<% end %>
+		  	<a class="close-reveal-modal">&#215;</a>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+
+	

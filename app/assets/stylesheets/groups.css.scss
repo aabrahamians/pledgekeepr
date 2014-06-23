@@ -1,3 +1,33 @@
 // Place all the styles related to the groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.groupbox {
+	border: 2px solid black;
+	min-width: 180px;
+	min-height: 150px;
+	display: inline-block;
+}
+.groupbanner{
+	font-size: 4em;
+	text-align: center;
+}
+.groupname {
+	font-size: 2em;
+}
+.members{
+	font-size: 1em;
+}
+
+.adminwelcomebanner {
+	font-size:4em;
+	text-align: center;
+}
+
+
+#newgroup{
+	text-align: center;
+	padding: 20px;
+}
