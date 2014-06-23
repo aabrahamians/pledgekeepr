@@ -1,5 +1,10 @@
-require 'rails_helper'
+require 'spec_helper'
 
-RSpec.describe MemberChore, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe MemberChore do 
+	describe 'data model relationships' do
+	
+	it { should belong_to(:user)}
+	it { should belong_to(:chore)}
+	end
+
 end

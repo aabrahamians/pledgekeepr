@@ -1,5 +1,16 @@
-require 'rails_helper'
+require 'spec_helper'
 
-RSpec.describe Group, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Group do 
+	describe 'data model relationships' do
+	
+	it { should have_many(:users)}
+	it { should have_many(:chores)}
+	end
+
+
+
+	describe 'testing columns' do
+  it { should have_db_column(:name) }
+  
+  end	
 end

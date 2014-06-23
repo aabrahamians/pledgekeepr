@@ -1,5 +1,17 @@
-require 'rails_helper'
+require 'spec_helper'
 
-RSpec.describe Chore, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Chore do 
+	describe 'data model relationships' do
+	
+	it { should have_many(:member_chores)}
+	it { should belong_to(:group)}
+	end
+
+	describe 'testing columns' do
+  it { should have_db_column(:name) }
+  it { should have_db_column(:description)}
+  it { should have_db_column(:points).
+      of_type(:integer)}
+  end	
 end
+

@@ -40,14 +40,9 @@ def index
     User.find(params[:id]).destroy
     redirect_to users_path
   end
-
- 
-
-
-
   protected
 
   def user_params
-      params.require(:user).permit(:name, :email, :phone, :role, :quota)
-    end
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone, :quota, :role)
+  end
 end

@@ -1,6 +1,6 @@
 class MemberChore < ActiveRecord::Base
 
-belongs_to :users
-belongs_to :chores
+belongs_to :user
+belongs_to :chore
 
 end
