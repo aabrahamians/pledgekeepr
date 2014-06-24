@@ -7,14 +7,16 @@ VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :name, presence: true
 	validates :role, presence: true
 	validates :phone, presence: true
-	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
+	# validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
 
 has_many :groups
 has_many :member_chores
 
-	validates_length_of :phone, minimum: 10, maximum: 10
-	validates_uniqueness_of :email
-	validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create
+ has_secure_password
+
+	# validates_length_of :phone, minimum: 10, maximum: 10
+	# validates_uniqueness_of :email
+	# validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create
 	
 	def password
   		@password

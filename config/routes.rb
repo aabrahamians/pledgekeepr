@@ -4,7 +4,7 @@ Pledgekeepr::Application.routes.draw do
  resources :sessions, only: [:new, :create, :destroy]
  resources :users
  resources :groups
- root 'groups#index'
+ root 'users#newpledge'
 
 
 

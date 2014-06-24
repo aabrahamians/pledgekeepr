@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       flash[:error] = "Invalid email/password combination"
       render 'new'
     else
-      session[:remember_token] = @user.id.to_s
+      session[:remember_token] = @user.id
       @current_user = @user
       redirect_to :root
     end

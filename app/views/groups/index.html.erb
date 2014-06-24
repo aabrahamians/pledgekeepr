@@ -6,33 +6,48 @@
 	<% @groups.each do |g| %>
 	<div class="groupbox">
 		<%= link_to group_path(g) do %>
-		<p class="groupname"><%= g.name %></p>
-      <%end%>
+			<p class="groupname"><%= g.name %></p>
+
+    <%end%>
+    <p><%= g.id %></p>
 		<div class="groupboxmembers">
-			<p class="members">john, joe, bill</p>
+			
+			<p class="members"><ul>
+				<% g.users.each do |user| %>
+					<li><%= user.name %></li>
+				<% end %>
+			</ul><%= g.user_id %></p>
+	
+            <%= link_to 'Delete', g, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to "Edit", edit_group_path(g) %>
+
 		</div>
 	</div>
 		<% end %>
-		<div class="groupbox" id="newgroup">
+	<div class="groupbox" id="newgroup">
 		<a href="#" data-reveal-id="myModal">Create New Group</a>
 		<div id="myModal" class="reveal-modal" data-reveal>
-			<%= form_for Group.new do |u| %>
+				<%= form_for Group.new do |u| %>
 		  <div class="row">
-		                <div class="small-6  small-offset-3 columns">
-		                    <h1><strong>Let's get started</strong></h1>
+          <div class="small-6  small-offset-3 columns">
+              <h1><strong>Let's get started</strong></h1>
 
-		                    <form role="form">
-		                        <div class="form-group">
-		                        <%= u.text_field :name, :placeholder => " Name"  %>
-		                        </div>
-		 
-		                        <div class="form-group">
-		                            <%= u.submit "Create", class: 'button success' %>
-		                        </div>
-		                    </form>
-		                    </div>
+              <form role="form">
+                  <div class="form-group">
+                  <%= u.text_field :name, :placeholder => " Name"  %>
+                  </div>
+								<hr>
+                 
+                  		
+ 									<div class="form-group">
+                      <%= u.submit "Create", class: 'button success' %>
+                  </div>
+                  	<% end %>
+
+              </form>
+          </div>
 			</div>
-			<% end %>
+			
 		  	<a class="close-reveal-modal">&#215;</a>
 		</div>
 	</div>

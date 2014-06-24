@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-def index
+
+
+  def index
     @users = User.all
   end
 
@@ -11,9 +13,12 @@ def index
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Thank you for signing up!"
-      session[:remember_token] = @user.id.to_s
-      redirect_to new_sessions_path
+      session[:remember_token] = @user.id
+      @user.quota = 1000
+      puts @user.quota
+      redirect_to :root
     else
+      raise @user.errors.inspect
       render :new
     end 
   end
@@ -42,6 +47,6 @@ def index
   protected
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone, :quota, :role)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone, :quota, :role, :group_id)
   end
 end

@@ -14,14 +14,17 @@
   <body>
       <div class="navbar">
     <% if !current_user %>
-       <%= link_to (image_tag 'logo.png', id: "logo"), root_path %>
+       <%= link_to (image_tag 'logo.png', id: "logo"), groups_path %>
        <a href="#" data-reveal-id="loginmodal" class="navlinks">LOG IN</a>
        <a href="#" data-reveal-id="signupmodal" class="navlinks">SIGN UP</a>
     <% end %>
 
     <% if current_user %>
-      <%= link_to (image_tag 'logo.png', id: "logo"), users_path %>
-      <%= link_to "SIGN OUT", sessions_path, :method => :delete, class: "navlinks" %>
+
+      <%= link_to (image_tag 'logo.png', id: "logo"), groups_path %>
+      <%= link_to "SIGN OUT", session_path(@current_user), method: 'delete', class: "navlinks" %>
+      <%= link_to 'Hello ' + @current_user.name + '!', user_path(@current_user), class: "navlinks" %>       
+
     <%end%>
 
   </div> <!-- end of navbar -->
