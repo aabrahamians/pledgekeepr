@@ -10,8 +10,8 @@ VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	# validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
 
 has_many :groups
-has_many :member_chores
-
+has_many :chore_instances
+has_many :chores, through: :chore_instances
  has_secure_password
 
 	# validates_length_of :phone, minimum: 10, maximum: 10

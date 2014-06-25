@@ -16,6 +16,16 @@ ActiveRecord::Schema.define(version: 20140624003822) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "chore_instances", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "chore_id"
+    t.integer  "user_id"
+  end
+
+  add_index "chore_instances", ["chore_id"], name: "index_chore_instances_on_chore_id", using: :btree
+  add_index "chore_instances", ["user_id"], name: "index_chore_instances_on_user_id", using: :btree
+
   create_table "chores", force: true do |t|
     t.string   "name"
     t.string   "description"
@@ -35,16 +45,6 @@ ActiveRecord::Schema.define(version: 20140624003822) do
   end
 
   add_index "groups", ["user_id"], name: "index_groups_on_user_id", using: :btree
-
-  create_table "member_chores", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "chore_id"
-    t.integer  "user_id"
-  end
-
-  add_index "member_chores", ["chore_id"], name: "index_member_chores_on_chore_id", using: :btree
-  add_index "member_chores", ["user_id"], name: "index_member_chores_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"

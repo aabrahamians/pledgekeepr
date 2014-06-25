@@ -3,8 +3,10 @@ Pledgekeepr::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
  resources :sessions, only: [:new, :create, :destroy]
  resources :users
- resources :groups
- root 'users#newpledge'
+ resources :groups do 
+  resources :chores
+end 
+ root 'sessions#welcome'
 
 
 

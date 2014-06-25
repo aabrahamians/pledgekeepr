@@ -1,5 +1,5 @@
 
-<p class="adminwelcomebanner">hi</p>
+<p class="adminwelcomebanner"><%= current_user.name %></p>
 
 
 <div class="small-6 column">
@@ -16,7 +16,6 @@
 				<% g.users.each do |user| %>
 					<li><%= user.name %></li>
 				<% end %>
-			</ul><%= g.user_id %></p>
 	
             <%= link_to 'Delete', g, method: :delete, data: { confirm: 'Are you sure?' } %>
             <%= link_to "Edit", edit_group_path(g) %>

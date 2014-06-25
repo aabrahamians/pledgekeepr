@@ -1,5 +1,6 @@
 class ChoresController < ApplicationController
  before_action :authenticate_user
+ before_action :groupfinder, only: [:index, :create, :new, :show]
 
 def index
 	@chores = Chore.all
@@ -14,10 +15,10 @@ def new
 end
 
 def create
-	@chore = current_user.groups.new(params.require(:group).permit(:name, :user_id))
-	@chore.user_id = current_user.id
+	@chore = current_user.chores.new(params.require(:chore).permit(:name, :description, :points, :group_id))
+	# @chore.user_id = current_user.id
 	if @chore.save
-		redirect_to group_path
+		redirect_to group_path(@group)
 	else
 		render 'new'
 	end
@@ -33,6 +34,12 @@ def destroy
 		redirect_to  group_path
 	end
 
+end
+
+
+private
+def groupfinder
+	@group = Group.find(params[:group_id])
 end
 
 end

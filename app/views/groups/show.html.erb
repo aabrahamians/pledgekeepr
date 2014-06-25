@@ -19,12 +19,12 @@
 <p class="progressbarbanner">Progress for date</p>
 
 
-<div>
-                       <button class="button alert"  data-reveal-id="choremaster" >Add Chore</button>
-                    </div>
+	<div>
+   <button class="button alert"  data-reveal-id="choremaster" >Add Chore</button>
+</div>
 
+  <div id="choremaster" class="reveal-modal" data-reveal>
+		<%= render partial: 'chores/forms', :controller=>"chores", :action =>"new" %>
 
-                     <div id="choremaster" class="reveal-modal" data-reveal>
-     
      <a class="close-reveal-modal">&#215;</a>
   </div>

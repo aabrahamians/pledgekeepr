@@ -4,7 +4,7 @@
 
             <div class="row">
                 <div class="small-6  small-offset-3 columns">
-                    <h1><strong>Let's get started</strong></h1>
+                    <h1><strong>Create an <span style="font-size: 1.3em; color: purple;">Admin</span> </strong></h1>
 
                     <form role="form">
                         <div class="form-group">
@@ -22,18 +22,9 @@
                          <div class="form-group">
                         <%= u.text_field :phone, :placeholder => "Phone Number"  %>
                         </div>
-                      <%= u.radio_button(:role, "pledge") %>
-                        <%= label_tag(:role, "I am a pledge") %>
-                        <%= u.radio_button(:role, "admin") %>
-                        <%= label_tag(:role, "I am an admin") %>
-                      <label>
-                        <select>
-                          <option value="">--role--</option>  
-                          <option value="Admin">Admin</option>  
-                          <option value="Pledge">Pledge</option>
-                        </select>
-                      </label>
-             
+                       
+                        <%= u.hidden_field :role, value: "Admin" %>
+
                         <div class="form-group">
                             <%= u.submit "Sign-Up", class: 'button success' %>
                         </div>
@@ -41,7 +32,7 @@
 
                    
                     <div>
-                        <%=link_to "Already a member? Log in", new_session_path, class: 'button alert' %>
+                       <button class="button alert"  data-reveal-id="loginmodal" >Already a member? Log-In!</button>
                     </div>
             </div>
             <div class="login-popup">

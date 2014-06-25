@@ -1,8 +1,9 @@
 class GroupsController < ApplicationController
+ before_action :chorebringer, only: [:show]
  before_action :authenticate_user
 
 def index
-	@groups = Group.all
+	@groups = Group.where(user_id: current_user.id)
 end
 
 def show 
@@ -33,6 +34,11 @@ def destroy
 		redirect_to  groups_path
 	end
 
+end
+
+private
+def chorebringer
+	@chore = Chore.new
 end
 
 end

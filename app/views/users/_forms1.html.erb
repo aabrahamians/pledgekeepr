@@ -1,0 +1,51 @@
+<%= form_for User.new do |u| %>
+        
+    <body>
+
+                <div class="row">
+                    <div class="small-6  small-offset-3 columns">
+                        <h1><strong>Create an <span style="font-size: 1.3em; color: purple;">Pledge</span> </strong></h1>
+
+                        <form role="form">
+                            <div class="form-group">
+                            <%= u.text_field :name, :placeholder => " Name"  %>
+                            </div>
+                            <div class="form-group">
+                            <%= u.text_field :email, :placeholder => "Email"  %>
+                            </div>
+                            <div class="form-group">
+                            <%= u.password_field :password, :placeholder => "Password"  %>
+                            </div>
+                            <div class="form-group">
+                              <%= u.password_field :password_confirmation,       :placeholder => "Password confirmation" %>
+                            </div>
+                             <div class="form-group">
+                            <%= u.text_field :phone, :placeholder => "Phone Number"  %>
+                            </div>
+                            <div >
+                            <%= u.text_field :group_id, :placeholder => "Enter Your Invitation Code"  %>
+                            </div>
+                         
+                            <%= u.hidden_field :role, value: "Pledge" %>
+                     
+                              <br>
+                                <%= u.submit "Sign-Up", class: 'button success' %>
+                                   <div>
+                           <button class="button alert"  data-reveal-id="loginmodal" >Already a member? Log-In!</button>
+                        </div>
+                            </div>
+
+                        </form>
+
+                       
+                     
+                </div>
+                <div class="login-popup">
+                
+                </div>
+            </div>
+           
+    </body>
+
+                
+<% end %>

@@ -1,0 +1,45 @@
+<body id="welcome">
+	<div id="intro" class="small-8  small-offset-3 columns">
+		<p> PledgeKeeper allows organizers to create a self propelled system for managing volunteers</p>
+	</div>
+
+	
+	<div>
+
+	<div class=" login ">admin
+		   <p> Sign up now to create your personal room... Add pledgekeepers and get productive!</p>
+				<br>
+	    <button class="button alert small"  data-reveal-id="adminmodal" >Join As admin.</button>
+
+	  	<div id="adminmodal" class="reveal-modal" data-reveal>
+				<%= render partial: 'users/forms', :controller=>"chores", :action =>"new" %>
+
+	    	<a class="close-reveal-modal">&#215;</a>
+	 		</div>
+		</div>
+
+
+
+
+
+
+		<div class="login">pledge
+			<p>Did you recieve an invidation code? Enter it into the form and be added to the group instantly!</p>
+			<br>
+	   		<button class="button alert small"  data-reveal-id="pledgemodal" >Join As pldege.</button>
+
+	  	<div id="pledgemodal" class="reveal-modal" data-reveal>
+			<%= render partial: 'users/forms1', :controller=>"chores", :action =>"new" %>
+
+	     <a class="close-reveal-modal">&#215;</a>
+	 	 </div>
+		
+
+
+</div>
+
+	
+
+	</div>
+
+</body>

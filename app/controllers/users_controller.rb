@@ -16,7 +16,12 @@ class UsersController < ApplicationController
       session[:remember_token] = @user.id
       @user.quota = 1000
       puts @user.quota
-      redirect_to :root
+      puts @user.role
+      if (@user.role == 'Admin')
+        redirect_to groups_path
+      else
+        redirect_to :root
+      end
     else
       raise @user.errors.inspect
       render :new

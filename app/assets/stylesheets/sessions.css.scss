@@ -1,3 +1,21 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#welcome {
+	 background: -webkit-linear-gradient(#ffffff 23.84%, #e2f8c1 100%);	
+    }
+
+.login {
+	text-align: center;
+	border: 1px solid black;
+	background: white;
+	box-shadow: 1em 2em 2em #333333;
+	max-width: 40%;
+	display: inline block;
+	margin: 0px;
+	height:200px;
+	float: left;
+	margin: 5px;
+}
