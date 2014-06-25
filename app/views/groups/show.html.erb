@@ -18,7 +18,7 @@
 
 <p class="progressbarbanner">Progress for date</p>
 
-
+<br><hr>
 	<div>
    <button class="button alert"  data-reveal-id="choremaster" >Add Chore</button>
 </div>
@@ -28,3 +28,14 @@
 
      <a class="close-reveal-modal">&#215;</a>
   </div>
+
+
+		<% @group.chores.each do |c| %>
+<div class="groupboxmembers" style="display:inline; float:left;">
+			
+			<p class="members"><ul>
+					<p><%= c.name %></p>
+					<p><%= c.description %></p>
+	
+		<% end %>
+		</div>

@@ -1,3 +1,4 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <%= form_for [@group, @chore] do |u| %>
         
     <body>
@@ -18,6 +19,10 @@
                             <%= u.hidden_field :group_id, value: "#{@group.id}" %>
                      
                               <br>
+
+
+
+
                                 <%= u.submit "Sign-Up", class: 'button success' %>
                                    <div>
                            <button class="button alert"  data-reveal-id="loginmodal" >Already a member? Log-In!</button>
@@ -33,8 +38,9 @@
                 
                 </div>
             </div>
-           
+          
     </body>
+
 
                 
 <% end %>
