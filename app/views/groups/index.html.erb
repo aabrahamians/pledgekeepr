@@ -3,26 +3,26 @@
 
 
 <div class="small-6 column">
-	<% @groups.each do |g| %>
+
+		<% @groups.each do |g| %>
 	<div class="groupbox">
-		<%= link_to group_path(g) do %>
-			<p class="groupname"><%= g.name %></p>
 
-    <%end%>
-    <p><%= g.id %></p>
+			<%= link_to group_path(g) do %>
+				<p class="groupname"><%= g.name %></p>
+
+	    <%end%>
+	    <p id="invitationcode"><%= g.id %></p>
 		<div class="groupboxmembers">
-			
-			<p class="members"><ul>
-				<% g.users.each do |user| %>
-					<li><%= user.name %></li>
-				<% end %>
-	
-            <%= link_to 'Delete', g, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <%= link_to "Edit", edit_group_path(g) %>
-
+				
+				<div class="members">
+					<% g.pledges.each do |user| %>
+						<li><%= user.name %></li>
+					<% end %>
+	      </div>
+					
 		</div>
 	</div>
-		<% end %>
+				<% end %>
 	<div class="groupbox" id="newgroup">
 		<a href="#" data-reveal-id="myModal">Create New Group</a>
 		<div id="myModal" class="reveal-modal" data-reveal>
@@ -41,12 +41,12 @@
  									<div class="form-group">
                       <%= u.submit "Create", class: 'button success' %>
                   </div>
-                  	<% end %>
+                  	
 
               </form>
           </div>
 			</div>
-			
+			<% end %>
 		  	<a class="close-reveal-modal">&#215;</a>
 		</div>
 	</div>

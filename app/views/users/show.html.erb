@@ -1,13 +1,10 @@
-  <p>All of  <%= @user.name %>'s activity</p>
-<% @user each do |s| %>
+  <p class="userbanner">HI <%= @user.name %></p>
 
-<div>
-	title: <strong><%= s.title %></strong> <br>
-  	Body:  <strong><%= s.body %></strong>
 
-  	 <% if (current_user == s.user) %>
-            <%= link_to 'Delete', s, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <%= link_to "edit", edit_story_path(s) %>
-        <% end %>
+
+<%= @user.quota %>
+
+
+<% @chores_available.each do |chore| %>
+   <%= chore.name %>
 <% end %>
-</div>

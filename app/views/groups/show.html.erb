@@ -2,15 +2,15 @@
 
 <div class="membersbox">
 	<p class="members"><ul>
-		<% @group.users.each do |g| %>
+		<% @group.pledges.each do |g| %>
 
 		<div class="groupboxmembers" style="display:inline; float:left;">
 			
 			<p class="members"><ul>
 					<p><%= g.name %></p>
 	
-            <%= link_to 'Delete', g, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <%= link_to "Edit", edit_group_path(g) %>
+            <%= link_to 'X', g, method: :delete, style: 'color:red;', data: { confirm: 'Are you sure?' } %>
+            
 
 		</div>
 		<% end %>
@@ -20,7 +20,7 @@
 
 <br><hr>
 	<div>
-   <button class="button alert"  data-reveal-id="choremaster" >Add Chore</button>
+   <button class="button success"  data-reveal-id="choremaster" >Add Chore</button>
 </div>
 
   <div id="choremaster" class="reveal-modal" data-reveal>
@@ -34,8 +34,12 @@
 <div class="groupboxmembers" style="display:inline; float:left;">
 			
 			<p class="members"><ul>
-					<p><%= c.name %></p>
-					<p><%= c.description %></p>
+					<p>Chores: <%= c.name %> (<%= c.points %>)</p>
+					<p>Descriptoin:<%= c.description %></p>
+
 	
-		<% end %>
+	
 		</div>
+			<% end %>
+
+			 <%= button_to 'Delete Group', @group, method: :delete, class: 'button alert expand', data: { confirm: 'Are you sure?' } %>

@@ -14,8 +14,8 @@ def new
 	@group = Group.new
 end
 
-def create
-	@group = current_user.groups.new(params.require(:group).permit(:name, :user_id))
+def create    
+	@group = current_user.groups_admined.new(params.require(:group).permit(:name, :user_id))
 	@group.user_id = current_user.id
 	if @group.save
 		redirect_to groups_path

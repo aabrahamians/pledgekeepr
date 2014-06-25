@@ -19,13 +19,22 @@
                             <%= u.hidden_field :group_id, value: "#{@group.id}" %>
                      
                               <br>
+                            <%= u.radio_button :points, '25', :checked => true %> 
+                            <%= label :points, '25' %> 
+                            <%= u.radio_button :points, '50'  %> 
+                            <%= label :points, '50' %>
+                            <%= u.radio_button :points, '100' %>
+                            <%= label :points, '100' %>
+                            <%= u.radio_button :points, '200' %>
+                            <%= label :points, '200' %>
+                            <%= u.radio_button :points, '300' %>
+                            <%= label :points, '300' %>
 
 
 
-
-                                <%= u.submit "Sign-Up", class: 'button success' %>
+                                <%= u.submit "Create", class: 'button radius round success' %>
                                    <div>
-                           <button class="button alert"  data-reveal-id="loginmodal" >Already a member? Log-In!</button>
+                           
                         </div>
                             </div>
 
