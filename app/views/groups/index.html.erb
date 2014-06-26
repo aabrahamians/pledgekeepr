@@ -1,5 +1,5 @@
 
-<p class="adminwelcomebanner"><%= current_user.name %></p>
+<p class="adminwelcomebanner"><%= current_user.name %>'s managed groups</p>
 
 
 <div class="small-6 column">
@@ -11,7 +11,11 @@
 				<p class="groupname"><%= g.name %></p>
 
 	    <%end%>
-	    <p id="invitationcode"><%= g.id %></p>
+	    
+
+<span data-tooltip class="has-tip" title="Invite Pledges to your group using this invitaion code"><p id="invitationcode"><%= g.id %></p></span>
+
+
 		<div class="groupboxmembers">
 				
 				<div class="members">

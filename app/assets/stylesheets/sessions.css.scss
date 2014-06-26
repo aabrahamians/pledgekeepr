@@ -10,7 +10,7 @@
 .login {
 	text-align: center;
 	border: 1px solid black;
-	background: white;
+	background: rgba(163, 148, 41, .5 );
 	box-shadow: 1em 2em 2em #333333;
 	max-width: 40%;
 	display: inline block;
@@ -18,4 +18,19 @@
 	height:200px;
 	float: left;
 	margin: 5px;
+}
+#loginboxbanner{
+	font-size: 2.5em;
+	
+}
+#invitetext {
+	font-size:1.5em;
+	color: white;
+	text-shadow: 0 -2px 3px #111,0 3px 4px #666;
+
+}
+
+.accordionlogin{
+text-align: center;
+font-weight: bold;
 }

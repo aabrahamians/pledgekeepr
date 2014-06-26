@@ -20,7 +20,6 @@ class UsersController < ApplicationController
       if (@user.role == 'Admin')
         redirect_to groups_path
       elsif (@user.role == 'Pledge')
-        
         redirect_to user_path(@user)
       end
     else

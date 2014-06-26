@@ -52,7 +52,21 @@
   </div>
 
   <div id="signupmodal" class="reveal-modal" data-reveal>
+
+<dl class="accordion" data-accordion>
+  <dd class="accordion-navigation">
+    <a href="#panel2" class="accordionlogin">Sign-up As Admin</a>
+    <div id="panel2" class="content">
      <%= render partial: 'users/forms', :controller=>"users", :action =>"new" %>
+    </div>
+  </dd>
+  <dd class="accordion-navigation">
+    <a href="#panel3" class="accordionlogin">Sign-up As Pledge</a>
+    <div id="panel3" class="content">
+      <%= render partial: 'users/forms1', :controller=>"users", :action =>"new" %>
+    </div>
+  </dd>
+</dl>
      <a class="close-reveal-modal"></a>
   </div>
 
