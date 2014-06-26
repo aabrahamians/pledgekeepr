@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Chore do 
 	describe 'data model relationships' do
 	
-	it { should have_many(:member_chores)}
+	it { should have_many(:chore_instances)}
 	it { should belong_to(:group)}
 	end
 

@@ -19,8 +19,9 @@ class UsersController < ApplicationController
       puts @user.role
       if (@user.role == 'Admin')
         redirect_to groups_path
-      else
-        redirect_to :root
+      elsif (@user.role == 'Pledge')
+        
+        redirect_to user_path(@user)
       end
     else
       raise @user.errors.inspect

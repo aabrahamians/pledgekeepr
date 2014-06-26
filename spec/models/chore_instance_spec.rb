@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe MemberChore do 
+describe ChoreInstance do 
 	describe 'data model relationships' do
 	
 	it { should belong_to(:user)}

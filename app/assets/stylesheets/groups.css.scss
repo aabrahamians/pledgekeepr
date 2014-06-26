@@ -17,9 +17,10 @@
 }
 
 
-#invitaioncode{
-	font-size: 2em;
-
+#invitationcode{
+	font-size: 6em;
+	color: #3c3c3c;
+text-shadow: 0 -2px 3px #111,0 3px 4px #666;
 	}
 
 p{	
@@ -30,8 +31,10 @@ p{
 .groupbox {
 	border: 2px solid black;
 	min-width: 180px;
-	min-height: 150px;
+	max-height:200px;
+	height: 200px;
 	display: inline-block;
+	overflow-y: scroll;
 }
 .groupbanner{
 	font-size: 4em;

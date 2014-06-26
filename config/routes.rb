@@ -4,7 +4,9 @@ Pledgekeepr::Application.routes.draw do
  resources :sessions, only: [:new, :create, :destroy]
  resources :users
  resources :groups do 
-  resources :chores
+  resources :chores do
+    resources :chore_instances
+  end
 end 
  root 'sessions#welcome'
 

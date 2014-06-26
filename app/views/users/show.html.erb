@@ -1,10 +1,20 @@
-  <p class="userbanner">HI <%= @user.name %></p>
+  <p class="userbanner"> <%= @user.name %></p>
 
 
+<div class="large-4 column">
+ <div style="font-size: 2em;">quota: <%= @user.quota %></div>
 
-<%= @user.quota %>
-
-
-<% @chores_available.each do |chore| %>
-   <%= chore.name %>
+<% if current_user.group_pledged %>
+	<% @chores_available.each do |chore| %>
+	 <div style="text-align :center; width: 200px; border: 2px solid black;">CHORE <br>
+	   <%= link_to group_chore_chore_instances_path(current_user.group_pledged.id, chore.id), method: :post do %>
+		   <%= chore.name %> <br>
+	   <% end %>
+	   <%= chore.points %> <br>
+	   <%= chore.description %>
+	</div>
+	<% end %>
+<% else %>
+	You're not a pledge, dumbass!!!
 <% end %>
+</div>
