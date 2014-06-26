@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     else
       session[:remember_token] = @user.id
       @current_user = @user
-      redirect_to :root
+      redirect_to groups_path
     end
 
   end

@@ -7,7 +7,7 @@
 		<div class="groupboxmembers" style="display:inline; float:left;">
 			
 			<p class="members"><ul>
-					<span data-tooltip class="has-tip" title="<%= g.name %>'s quota is <%= g.quota %>"><p><%= g.name %></p></span>
+					<span data-tooltip class="has-tip" title="<%= 100 - (g.quota / 10 )%>% completed"><p><%= g.name %></p></span>
 	
             <%= link_to 'X', g, method: :delete, style: 'color:red;', data: { confirm: 'Are you sure?' } %>
             
@@ -15,12 +15,13 @@
 		</div>
 		<% end %>
 </div>
-<%= @total_group_progress%>
-<%= @total_in_group%>
-<%= @group_quota_sum%>
+<%#= @total_in_group%>
+<%#= @total_group_progress%>
 
-<input   type="text" value= 3 class="dial" data-readOnly=true>
+<%#= @group_quota_sum%>
 
+<input   type="text" value= <%= @total_group_progress%> class="dial" data-readOnly=true>
+<h1><%= @total_group_progress%>% done</h1>
 <script>
 $(".dial").knob({
                  'change' : function (v) { console.log(v); }
@@ -46,8 +47,8 @@ $(".dial").knob({
 <div class="groupboxmembers" style="display:inline; float:left;">
 			
 			<p class="members"><ul>
-					<p>Chores: <%= c.name %> (<%= c.points %>)</p>
-					<p>Descriptoin:<%= c.description %></p>
+					<p><strong>Chores:</strong> <%= c.name %> (<%= c.points %>)</p>
+					<p><strong>Descriptoin: </strong><%= c.description %></p>
 
 	
 	
