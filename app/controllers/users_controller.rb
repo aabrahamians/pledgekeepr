@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @chores_not_available = @user.group_pledged.chores.joins(:chore_instances).where('date(chore_instances.created_at) = ?', Date.today).map(&:id)
+    @chores_not_available = @user.group_pledged.chores.joins(:chore_instances).where('(chore_instances.created_at) > ?', Time.now-14400).map(&:id)
     @chores_available = @user.group_pledged.chores.to_a.select do |chore|
       !@chores_not_available.include?(chore.id)
     end

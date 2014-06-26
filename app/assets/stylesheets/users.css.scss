@@ -6,3 +6,25 @@
 .userbanner {
  font-size: 2em;
 }
+
+
+.progress-meter {
+  
+  .background {
+    fill: black;
+  }
+  
+  .foreground {
+    fill: #2E7AF9;
+  }
+  
+  text {
+    font-family: 'Georgia' sans-serif;
+    font-size: 90px;
+  }
+  
+  .text2 {
+    font-family: 'Georgia' sans-serif;
+    font-size: 20px;
+  }
+}

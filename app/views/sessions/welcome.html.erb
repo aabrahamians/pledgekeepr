@@ -11,35 +11,32 @@
 
 	<div class=" login ">admin
 		   <p> Sign up now to create your personal room... Add pledgekeepers and get productive!</p>
-				<br>
-	    <button class="button alert small"  data-reveal-id="adminmodal" >Join As admin.</button>
+			<br>
+	    	<button class="button alert small"  data-reveal-id="adminmodal" >Join As admin.</button>
 
-	  	<div id="adminmodal" class="reveal-modal" data-reveal>
+	  <div id="adminmodal" class="reveal-modal" data-reveal>
 				<%= render partial: 'users/forms', :controller=>"chores", :action =>"new" %>
 
-	    	<a class="close-reveal-modal">&#215;</a>
-	 		</div>
-		</div>
+	    	<a class="close-reveal-modal"></a>
+	 	</div>
+	</div>
 
 
 
 
 
 
-		<div class="login">pledge
+	<div class="login">pledge
 			<p>Did you recieve an invidation code? Enter it into the form and be added to the group instantly!</p>
 			<br>
 	   		<button class="button alert small"  data-reveal-id="pledgemodal" >Join As pldege.</button>
 
-	  	<div id="pledgemodal" class="reveal-modal" data-reveal>
+	  <div id="pledgemodal" class="reveal-modal" data-reveal>
 			<%= render partial: 'users/forms1', :controller=>"chores", :action =>"new" %>
 
-	     <a class="close-reveal-modal">&#215;</a>
-	 	 </div>
-		
-
-
-</div>
+		    <a class="close-reveal-modal"></a>
+	 	</div>
+	</div>
 
 	
 

@@ -1,8 +1,19 @@
+
   <p class="userbanner"> <%= @user.name %></p>
 
 
 <div class="large-4 column">
  <div style="font-size: 2em;">quota: <%= @user.quota %></div>
+
+<input   type="text" value=<%= @user.quota / 10 %> class="dial" data-readOnly=true>
+
+<script>
+$(".dial").knob({
+                 'change' : function (v) { console.log(v); }
+                });
+</script>
+
+
 
 <% if current_user.group_pledged %>
 	<% @chores_available.each do |chore| %>

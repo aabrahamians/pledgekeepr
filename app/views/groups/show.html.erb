@@ -15,6 +15,18 @@
 		</div>
 		<% end %>
 </div>
+<%= @total_group_progress%>
+<%= @total_in_group%>
+<%= @group_quota_sum%>
+
+<input   type="text" value= 3 class="dial" data-readOnly=true>
+
+<script>
+$(".dial").knob({
+                 'change' : function (v) { console.log(v); }
+                });
+</script>
+
 
 <p class="progressbarbanner">Progress for date</p>
 
@@ -26,7 +38,7 @@
   <div id="choremaster" class="reveal-modal" data-reveal>
 		<%= render partial: 'chores/forms', :controller=>"chores", :action =>"new" %>
 
-     <a class="close-reveal-modal">&#215;</a>
+     <a class="close-reveal-modal"></a>
   </div>
 
 

@@ -7,13 +7,13 @@
     <title>Pledgekeeper</title>
 
     <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
       <div class="navbar">
-        
     <% if !current_user %>
        <%= link_to (image_tag 'logo.png', id: "logo"), groups_path %>
        <a href="#" data-reveal-id="loginmodal" class="navlinks">LOG IN</a>
@@ -21,9 +21,10 @@
     <% end %>
 
 
+   
+    <% if current_user %>
 
-
-    <% if @current_user.role == 'Admin' %>
+        <% if @current_user.role == 'Admin' %>
 
       <%= link_to (image_tag 'logo.png', id: "logo"), groups_path %>
       <%= link_to "SIGN OUT", session_path(@current_user), method: 'delete', class: "navlinks" %>
@@ -35,8 +36,9 @@
       <%= link_to "SIGN OUT", session_path(@current_user), method: 'delete', class: "navlinks" %>
       <%= link_to 'Hello ' + @current_user.name + '!', user_path(@current_user), class: "navlinks" %>       
 
+    <%end%>   
+
     <%end%>
-    
 
   </div> <!-- end of navbar -->
 
@@ -45,16 +47,15 @@
  
   <div id="loginmodal" class="reveal-modal" data-reveal>
      <%= render partial: 'sessions/forms', :controller=>"sessions", :action =>"new" %>
-     <a class="close-reveal-modal">&#215;</a>
+     <a class="close-reveal-modal"></a>
   </div>
 
   <div id="signupmodal" class="reveal-modal" data-reveal>
      <%= render partial: 'users/forms', :controller=>"users", :action =>"new" %>
-     <a class="close-reveal-modal">&#215;</a>
+     <a class="close-reveal-modal"></a>
   </div>
 
 
     <%= yield %>
-    <%= javascript_include_tag "application" %>
   </body>
 </html>
