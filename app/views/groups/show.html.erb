@@ -15,12 +15,13 @@
 		</div>
 		<% end %>
 </div>
-<%#= @total_in_group%>
-<%#= @total_group_progress%>
 
-<%#= @group_quota_sum%>
+<%= @total_group_progress%>
 
-<input   type="text" value= <%= @total_group_progress%> class="dial" data-readOnly=true>
+<%= @group_quota_sum%>
+<%= @total_in_group%>
+
+<input   type="text" value= <%= @total_group_progress * 100%> class="dial" data-readOnly=true>
 <h1><%= @total_group_progress%>% done</h1>
 <script>
 $(".dial").knob({

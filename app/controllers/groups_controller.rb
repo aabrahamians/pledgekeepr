@@ -8,9 +8,9 @@ end
 
 def show 
 	@group = Group.find(params[:id])
-	@group_quota_sum = @group.pledges.sum(:quota)
-	@total_in_group = (@group.pledges.count * 100)
-	@total_group_progress = @group_quota_sum.to_f / @total_in_group.to_f
+	@group_quota_sum = @group.pledges.sum(:quota).to_f
+	@total_in_group = (@group.pledges.count * 1000).to_f
+	@total_group_progress = @group_quota_sum/@total_in_group
 end
 
 def new
