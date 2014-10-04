@@ -1,46 +1,49 @@
-<body id="welcome">
-	<div id="intro" class="small-8  small-offset-3 columns">
-		<p> PledgeKeeper allows organizers to create a self propelled system for managing volunteers</p>
-	</div>
-
-	
-	<div class = "row ">
-
-
-
-
-	<div class="small-6 large-6 login right "><span id="loginboxbanner">Admin</span>
-		   <p id='invitetext'> Sign up now to create a private group... Share your invitation code to add pledgekeepers and get productive!
-			<br>
-	    	<button class="button alert small"  data-reveal-id="adminmodal" >Join As admin.</button>
-
-	  <div id="adminmodal" class="reveal-modal" data-reveal>
-				<%= render partial: 'users/forms', :controller=>"chores", :action =>"new" %>
-
-	    	<a class="close-reveal-modal"></a>
-	 	</div>
-	 	</p>
+<body>
+	<div id="intro" class="large-6 large-offset-3 columns text-center">
+		<h1>PledgeKeeper is a new approach to organizing tasks within a group!</h1>
+		<h3>Forget about the worry of assigning tasks.</h3>
+		<h3>No longer do participants of a group have to feel forced to do tasks they dont want.</h3>
+		<h3>Promote a healthy self motivating enviornment to organize and get tasks done.</h3>
 	</div>
 
 
+	<div class = "row text-center ">
+
+		<div class=" medium-12 large-5 login  columns ">
+			<div class='invitetext'> 
+				<h2>Admin</h2>
+				<p>Sign up now to create a private group... Share your invitation code to add pledgekeepers and get productive!</p>
+				
+				<button class="button alert small round"  data-reveal-id="adminmodal" >
+					Join As admin.
+				</button>
+				<!-- Reveal modal -->
+				<div id="adminmodal" class="reveal-modal" data-reveal>
+					<%= render partial: 'users/forms', :controller=>"chores", :action =>"new" %>
+
+					<a class="close-reveal-modal"></a>
+					<!-- end reveal -->
+					</div>
+			</div>
+		</div>
 
 
+		<div id="shake" class=" medium-12 large-5  login  columns ">
+			<div class='invitetext' >
+				<h2>Pledge</h2>
+				<p>Did you recieve an invidation code? Enter the code when you register to be in your group!</p>
+				
+				<button class="button alert small round"  data-reveal-id="pledgemodal" >Join As pldege.</button>
+	<!-- Reveal modal -->
+			<div id="pledgemodal" class="reveal-modal" data-reveal>
+				<%= render partial: 'users/forms1', :controller=>"chores", :action =>"new" %>
 
+			<a class="close-reveal-modal"></a>
+	<!-- end reveal -->
+			</div>
+		</div>
 
-	<div class="small-6 large-6 login left"><span id="loginboxbanner">Pledge</span>
-			<p id='invitetext' >Did you recieve an invidation code? Enter the code when you register to be in your group!</p>
-			<br>
-	   		<button class="button alert small"  data-reveal-id="pledgemodal" >Join As pldege.</button>
-
-	  <div id="pledgemodal" class="reveal-modal" data-reveal>
-			<%= render partial: 'users/forms1', :controller=>"chores", :action =>"new" %>
-
-		    <a class="close-reveal-modal"></a>
-	 	</div>
-	</div>
-
-	
-
+		</div>
 	</div>
 
 </body>

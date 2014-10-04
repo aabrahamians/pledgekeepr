@@ -7,7 +7,7 @@
 		<div class="groupboxmembers" style="display:inline; float:left;">
 			
 			<p class="members"><ul>
-					<span data-tooltip class="has-tip" title="<%= (g.quota / 10 )%>% completed"><p><%= g.name %></p></span>
+					<span data-tooltip class="has-tip" title="<%= (g.quota / 10 )%>% completed"><p><%= g.name.titleize %></p></span>
 	
             <%= link_to 'X', g, method: :delete, style: 'color:red;', data: { confirm: 'Are you sure?' } %>
             
@@ -44,9 +44,9 @@ $(".dial").knob({
 		<% @group.chores.each do |c| %>
 <div class="groupboxmembers" style="display:inline; float:left;">
 			
-			<p class="members"><ul>
+			<div class="members">
 					<p><strong>Chores:</strong> <%= c.name %> (<%= c.points %>)</p>
-					<p><strong>Descriptoin: </strong><%= c.description %></p>
+					<p><strong>Descriptoin: </strong><%= c.description %></div>
 
 	
 	

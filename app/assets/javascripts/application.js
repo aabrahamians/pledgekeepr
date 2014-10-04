@@ -17,3 +17,9 @@
 
 $(function(){ $(document).foundation(); });
 
+
+$("div loginboxbanner").hover(function() {
+  $(this).addClass("shake");
+}, function() {
+  $(this).removeClass("shake");
+});
