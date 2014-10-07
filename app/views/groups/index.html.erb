@@ -1,64 +1,58 @@
 
-<p class="adminwelcomebanner"><%= current_user.name %>'s managed groups</p>
-
-
-<div class="small-6 column">
-
+<div class="row text-center">
+	<!-- welcome banner -->
+	<h1><%= current_user.name %>'s managed groups</h1>
+	
+	<!-- list of managed groups -->
 		<% @groups.each do |g| %>
-	<div class="groupbox">
+			<div class="groupbox">
+				<%= link_to group_path(g) do %>
+				<h3><%= g.name %></h3>
+				<%end%>
 
-			<%= link_to group_path(g) do %>
-				<p class="groupname"><%= g.name %></p>
+				<!-- Tooltip -->
+				<span data-tooltip class="has-tip" title="Invite Pledges to your group using this invitaion code"><h4><%= g.id %></h4></span>
+				<!-- end of tooltip -->
 
-	    <%end%>
-	    
-
-<span data-tooltip class="has-tip" title="Invite Pledges to your group using this invitaion code"><p id="invitationcode"><%= g.id %></p></span>
-
-
-		<div class="groupboxmembers">
-				
-				<div class="members">
-					<% g.pledges.each do |user| %>
+				<!-- Group info box -->
+					<div class="members small-12  ">
+						<%if g.pledges.count == 0 %>
+						<p>Looks like no one has joined yet... Invite poeple! </p>
+						<% end %>
+						<% g.pledges.each do |user| %>
 						<li><%= user.name %></li>
+						<% end %>
+					</div>
+				</div>
+				<!-- end of group info -->
+		<% end %>
+
+		<div class="groupbox" id="newgroup">
+			<a href="#" data-reveal-id="myModal">
+				<h6>Create New Group</h6>
+			</a>
+			<div id="myModal" class="reveal-modal small text-center" data-reveal>
+				
+				
+					<%= form_for Group.new do |u| %>
+						<h3><strong>Let's get started</strong></h3>
+						<div class="small-6  small-offset-3 columns">
+						<form role="form">
+							<div class="form-group ">
+							<%= u.text_field :name, :placeholder => " Group Name" %>
+							<%= u.submit "Create", class: 'button tiny success' %>
+							</div>
+						</form>
+						</div>
 					<% end %>
-	      </div>
-					
-		</div>
-	</div>
-				<% end %>
-	<div class="groupbox" id="newgroup">
-		<a href="#" data-reveal-id="myModal">Create New Group</a>
-		<div id="myModal" class="reveal-modal" data-reveal>
-				<%= form_for Group.new do |u| %>
-		  <div class="row">
-          <div class="small-6  small-offset-3 columns">
-              <h1><strong>Let's get started</strong></h1>
-
-              <form role="form">
-                  <div class="form-group">
-                  <%= u.text_field :name, :placeholder => " Name"  %>
-                  </div>
-								<hr>
-                 
-                  		
- 									<div class="form-group">
-                      <%= u.submit "Create", class: 'button success' %>
-                  </div>
-                  	
-
-              </form>
-          </div>
+		
+				<a class="close-reveal-modal"></a>
 			</div>
-			<% end %>
-		  	<a class="close-reveal-modal"></a>
 		</div>
-	</div>
-
+	<!-- end of managed grops -->
 </div>
 
 
 
 
 
-	

@@ -3,15 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-body {
-	 background: -webkit-linear-gradient(#ffffff 23.84%, #e2f8c1 100%);	
-    }
-
-@media only screen and (max-width: 800px){
-  .login{height:160px;}
-  h1{ font-size:2em;}
-  h3{ font-size:1.4em}
-}
 
 .login {
 	
@@ -26,11 +17,14 @@ body {
 .invitetext {
 	font-size:1em;
 	color: black;
+	height:180px;
 	// text-shadow: 0 -2px 3px #111,0 3px 4px #666;
-
+	
 }
 
 .accordionlogin{
 text-align: center;
 font-weight: bold;
 }
+
+

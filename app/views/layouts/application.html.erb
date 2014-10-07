@@ -29,7 +29,8 @@
 
       <%= link_to (image_tag 'logo.png', id: "logo"), groups_path %>
       <%= link_to "SIGN OUT", session_path(@current_user), method: 'delete', class: "navlinks" %>
-      <%= link_to 'Hello ' + @current_user.name + '!', user_path(@current_user), class: "navlinks" %>       
+
+      <%= link_to 'Hello ' + @current_user.name + '!', group_path(@current_user.id), class: "navlinks" %>       
     
     <% elsif @current_user.role == 'Pledge'%>
       
