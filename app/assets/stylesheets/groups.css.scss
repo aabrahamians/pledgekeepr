@@ -17,14 +17,6 @@
 	text-align: center;
 }
 
-.members{
-	font-size: 1em;
-	border: 1px solid black;
-	// margin: 2px 4px;
-	max-width: 100px;
-	overflow-x: scroll;
-}
-
 
 #groupname{
 	background-color: rgba(0,0,0,.2);
@@ -36,16 +28,36 @@
 }
 
 .membersbox {
-	margin: 0 auto;
-	height: 150px;
-	border:2px dotted gray;
-		p{
-			display:inline-block;
-			margin:5px;
-			font-size: 1.5em;
-		}
-	}
+	min-height: auto;
+	border: 2px solid black;	
+}
+#membersname{
+	p{color:red;}
+}
+
 .progressbarbanner{
 	font-size: 3em;	
 }
+
+
+#choresection{
+	background-color: rgba(122,20,45, .5);
+	margin-top: 10px;
+
+}
+.members{
+	display: inline-block;
+	font-size: 1em;
+	border: 1px solid black;
+	// margin: 2px 4px;
+	overflow-x: scroll;
+	max-height: 80px;
+	
+	@media only screen and 
+	(min-width:  64.063em) and 
+	(max-width: 120em) { 
+	width:200px;
+	} 
+}
+
 

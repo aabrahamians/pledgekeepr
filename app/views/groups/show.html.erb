@@ -1,51 +1,62 @@
-<h1 id="groupname" class="small-12"><%= @group.name %></h1>
+<div class="container">
 
-<div class="membersbox">
-		<% @group.pledges.each do |g| %>
-
-		<div class="groupboxmembers" style="display:inline; float:left;">
-					<span data-tooltip class="has-tip" title="<%= (g.quota / 10 )%>% completed"><p><%= g.name.to_s %></p></span>
-	
-            <%= link_to 'X', g, method: :delete, style: 'color:red;', data: { confirm: 'Are you sure?' } %>
-		</div>
-		<% end %>
-</div>
+	<h1 id="groupname" class="small-12 text-center"><%= @group.name %></h1>
 
 
+	<!-- memeberbox -->
+	<div class="membersbox clearfix">
+		<div class="left small-12 medium-6">
+			<% @group.pledges.each do |g| %>
 
-<input   type="text" value= <%= @total_group_progress * 100%> class="dial" data-readOnly=true>
-<h1><%= @total_group_progress * 100 %>% done</h1>
-<script>
-$(".dial").knob({
-                 'change' : function (v) { console.log(v); }
-                });
-</script>
-
-
-<p class="progressbarbanner">Progress for date</p>
-
-<br><hr>
-	<div>
-   <button class="button success"  data-reveal-id="choremaster" >Add Chore</button>
-</div>
-
-  <div id="choremaster" class="reveal-modal" data-reveal>
-		<%= render partial: 'chores/forms', :controller=>"chores", :action =>"new" %>
-
-     <a class="close-reveal-modal"></a>
-  </div>
-
-
-		<% @group.chores.each do |c| %>
-<div class="groupboxmembers" style="display:inline; float:left;">
-			
-			<div class="members">
-					<p><strong>Chores:</strong> <%= c.name %> (<%= c.points %>)</p>
-					<p><strong>Descriptoin: </strong><%= c.description %></div>
-
-	
-	
-		</div>
+			<!-- pledge names + tooltip-->
+			<div id="membersname">
+				<span data-tooltip class="has-tip" title="<%= (g.quota / 10 )%>% remaining"><p><%= g.name.to_s %>
+					<%= link_to 'X', g, method: :delete, style: 'color:red;', data: { confirm: 'Are you sure?' } %></p></span>
+			</div>
 			<% end %>
+			<!-- end names and tooltip -->
+		</div>
 
-			 <%= button_to 'Delete Group', @group, method: :delete, class: 'button alert expand', data: { confirm: 'Are you sure?' } %>
+	  <!-- if no pledges have been added it wont show the progress dial -->
+		<div class="right small-12 medium-6">
+			<% if @group.pledges.count == 0 %>
+				<h1>no one has been added yet!</h1>
+			<% else %>
+				<input value= <%= @total_group_progress * 100%> data-width="50%" class="dial" data-angleArc=250 data-angleOffset=-125 data-readOnly=true > 
+			<%= @total_group_progress * 100%> remaining
+			<% end %>	
+		</div>
+		<!-- end progress dial -->
+	</div>
+	<!-- end memberbox -->
+
+	
+	<div class="container" id="choresection">
+		<!-- Chorelist -->
+		<div class="row">
+			<% @group.chores.each do |c| %>
+				<div class=" members  small-12 large-12 ">
+					<p><strong>Points:</strong> <%= c.points %></p>
+					<p><strong>Chores:</strong> <%= c.name %> (<%= c.points %>)</p>
+					<p><strong>Description: </strong><%= c.description %></p>
+				</div>
+			<% end %>
+		</div>
+		<!-- end Chorelist -->
+
+		<!-- button and modal for reveal-->
+		<div>
+			<button class="button success " style="margin-left: 50%;" data-reveal-id="addchore" >Add Chore</button>
+		</div>
+		<div id="addchore" class="reveal-modal" data-reveal>
+			<%= render partial: 'chores/forms', :controller=>"chores", :action =>"new" %>
+			<a class="close-reveal-modal"></a>
+		</div>
+		<!--end button and modal for reveal  -->
+	</div>
+
+
+	<!-- button to delete -->
+	<%= button_to 'Delete Group', @group, method: :delete, class: 'button alert expand', data: { confirm: 'Are you sure?' } %>
+	<!-- end button -->
+</div>
