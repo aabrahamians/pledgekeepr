@@ -18,8 +18,3 @@
 $(function(){ $(document).foundation(); });
 
 
-$(".dial").knob({
-  'format' : function (value) {
-     return value + '%';
-  }
-});
