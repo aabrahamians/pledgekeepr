@@ -1,31 +1,28 @@
+<div class="container">
 
-  <p class="userbanner"> <%= @user.name.titleize %></p>
-
-
-<div class="large-4 column">
- <div style="font-size: 2em;">quota: <%= @user.quota %></div>
-
-<input   type="text" value=<%= @user.quota / 10 %> class="dial" data-readOnly=true>
-
-<script>
-$(".dial").knob({
-                 'change' : function (v) { console.log(v); }
-                });
-</script>
+	<h1><%= @user.name.humanize %></h1>
 
 
-
-<% if current_user.group_pledged %>
-	<% @chores_available.each do |chore| %>
-	 <div style="text-align :center; width: 200px; border: 2px solid black;">CHORE <br>
-	   <%= link_to group_chore_chore_instances_path(current_user.group_pledged.id, chore.id), method: :post do %>
-		   <%= chore.name %> <br>
-	   <% end %>
-	   <%= chore.points %> <br>
-	   <%= chore.description %>
+	<!-- Chorelist -->
+	<% if current_user.group_pledged %>
+	<div class="row" id="choresection">
+		<% @chores_available.each do |c| %>
+			<div class=" members  small-12 left column">
+				<p><strong>Points:</strong> <%= c.points %></p>
+				<p><strong>Chores:</strong> 
+				   <%= link_to group_chore_chore_instances_path(current_user.group_pledged.id, c.id), method: :post do %>
+					   <%= c.name %> <br>
+				   <% end %></p>
+				<p><strong>Description: </strong><%= c.description %></p>
+			</div>
+		<% end %>
 	</div>
-	<% end %>
-<% else %>
-	You're not a pledge, dumbass!!!
-<% end %>
+	<!-- end Chorelist -->
+
+			<% end %>
+
+	</div>
 </div>
+
+
+		

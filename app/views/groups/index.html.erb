@@ -8,19 +8,19 @@
 			<div class="groupbox">
 				<%= link_to group_path(g) do %>
 				<h3><%= g.name %></h3>
-				<%end%>
+				
 
 				<!-- Tooltip -->
 				<span data-tooltip class="has-tip" title="Invite Pledges to your group using this invitaion code"><h4><%= g.id %></h4></span>
 				<!-- end of tooltip -->
-
+				<%end%>
 				<!-- Group info box -->
 					<div class="members small-12  ">
 						<%if g.pledges.count == 0 %>
 						<p>Looks like no one has joined yet... Invite poeple! </p>
 						<% end %>
 						<% g.pledges.each do |user| %>
-						<li><%= user.name %></li>
+						<li><%= user.name.titleize %></li>
 						<% end %>
 					</div>
 				</div>
