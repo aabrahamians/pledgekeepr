@@ -1,0 +1,57 @@
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+             <%= link_to (image_tag 'logo.png', id: "logo"), groups_path %>
+    </li>
+    <!-- hamburger icon -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <% if current_user %>
+        <% if @current_user.role == 'Admin' %>    <!-- if admin directs to group#index -->
+          <li><%= link_to 'Hello ' + @current_user.name + '!', groups_path, class: "navlinks" %> </li>
+        <% elsif @current_user.role == 'Pledge'%>  <!-- if pledge directs to user#show -->
+         <li><%= link_to 'Hello ' + @current_user.name + '!', user_path(@current_user), class: "navlinks" %></li> 
+        <%end%>   
+          <li><%= link_to "SIGN OUT", session_path(@current_user), method: 'delete', class: "navlinks" %></li>
+      <% else %>
+        <!-- if not logged in -->
+       <li><a href="#" data-reveal-id="loginmodal" class="navlinks">LOG IN</a></li>
+       <li><a href="#" data-reveal-id="signupmodal" class="navlinks">SIGN UP</a></li>
+      <%end%>     
+    </ul>
+  </section>
+  
+  <!-- modals -->
+  <div id="loginmodal" class="reveal-modal" data-reveal>
+     <%= render partial: 'sessions/forms', :controller=>"sessions", :action =>"new" %>
+       <a class="close-reveal-modal"></a>
+  </div>
+
+  <div id="signupmodal" class="reveal-modal" data-reveal>
+    <dl class="accordion" data-accordion>
+      <dd class="accordion-navigation">
+        <a href="#panel2" class="accordionlogin">Sign-up As Admin</a>
+        <div id="panel2" class="content">
+         <%= render partial: 'users/forms', :controller=>"users", :action =>"new" %>
+        </div>
+      </dd>
+      <dd class="accordion-navigation">
+        <a href="#panel3" class="accordionlogin">Sign-up As Pledge</a>
+        <div id="panel3" class="content">
+          <%= render partial: 'users/forms1', :controller=>"users", :action =>"new" %>
+        </div>
+      </dd>
+    </dl>
+         <a class="close-reveal-modal"></a>
+  </div>
+  <!-- end modals -->
+
+</nav>
+
+
+
+

@@ -5,22 +5,13 @@
 
 
 .login {
-	
+	font-size:1em;
 	border: 1px solid black;
 	background: rgba(163, 148, 41, .5 );
 	// box-shadow: 1em 2em 2em #333333;
-	display: inline block;
-	
-	float: left;
 }
 
-.invitetext {
-	font-size:1em;
-	color: black;
-	height:180px;
-	// text-shadow: 0 -2px 3px #111,0 3px 4px #666;
-	
-}
+
 
 .accordionlogin{
 text-align: center;
@@ -28,3 +19,15 @@ font-weight: bold;
 }
 
 
+#signupmodal {
+	background-color: rgba(255,255,255,0.80);
+	border-radius: 10px;
+	max-width:850px;
+}
+
+#loginmodal {
+	background-color: rgba(255,255,255,0.80);
+	border-radius: 10px;
+	max-width:850px;
+
+}

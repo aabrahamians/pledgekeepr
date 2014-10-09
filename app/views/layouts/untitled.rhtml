@@ -1,0 +1,62 @@
+
+
+  <div class="navbar">
+    <% if !current_user %>
+       <%= link_to (image_tag 'logo.png', id: "logo"), groups_path %>
+       
+       <a href="#" data-reveal-id="loginmodal" class="navlinks">LOG IN</a>
+       <a href="#" data-reveal-id="signupmodal" class="navlinks">SIGN UP</a>
+    <% end %>
+
+
+   
+    <% if current_user %>
+      <% if @current_user.role == 'Admin' %>    <!-- if admin directs to group index -->
+        <li><%= link_to 'Hello ' + @current_user.name + '!', groups_path, class: "navlinks" %> </li>
+      <% elsif @current_user.role == 'Pledge'%>  <!-- if pledge directs to user show -->
+        <li><%= link_to 'Hello ' + @current_user.name + '!', user_path(@current_user), class: "navlinks" %></li> 
+      <%end%>   
+        <li><%= link_to "SIGN OUT", session_path(@current_user), method: 'delete', class: "navlinks" %></li>
+    <%end%>     
+
+      <li><%= link_to (image_tag 'logo.png', id: "logo"), groups_path %></li>
+    
+
+           
+    
+   
+      <%= link_to (image_tag 'logo.png', id: "logo"), user_path(@current_user) %>
+      <%= link_to "SIGN OUT", session_path(@current_user), method: 'delete', class: "navlinks" %>
+          
+
+
+    <%end%>
+
+  </div> <!-- end of navbar -->
+
+
+
+ 
+  <div id="loginmodal" class="reveal-modal" data-reveal>
+     <%= render partial: 'sessions/forms', :controller=>"sessions", :action =>"new" %>
+     <a class="close-reveal-modal"></a>
+  </div>
+
+  <div id="signupmodal" class="reveal-modal" data-reveal>
+
+<dl class="accordion" data-accordion>
+  <dd class="accordion-navigation">
+    <a href="#panel2" class="accordionlogin">Sign-up As Admin</a>
+    <div id="panel2" class="content">
+     <%= render partial: 'users/forms', :controller=>"users", :action =>"new" %>
+    </div>
+  </dd>
+  <dd class="accordion-navigation">
+    <a href="#panel3" class="accordionlogin">Sign-up As Pledge</a>
+    <div id="panel3" class="content">
+      <%= render partial: 'users/forms1', :controller=>"users", :action =>"new" %>
+    </div>
+  </dd>
+</dl>
+     <a class="close-reveal-modal"></a>
+  </div>

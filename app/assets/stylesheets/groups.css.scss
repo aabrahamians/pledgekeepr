@@ -6,15 +6,27 @@
 .groupbox {
 	border: 2px solid black;
 	border-radius: 10%;
-	min-width:100px;
-	background-color: rgba(50,0,30,.2);
-	height: 200px;
+	min-width:150px;
+	// max-width:180px;
+	background-color: rgba(209,219,189,1);
 	display:inline-block;
 	overflow-y: scroll;
+	// for medium and up
+		@media only screen and 
+		(min-width:  40.063em) and 
+		(max-width: 120em) { 
+		height: 200px;
+	} 
 }
 .groupbanner{
 	font-size: 4em;
 	text-align: center;
+}
+
+#adminbanner{
+	display: block;
+	padding: 5px;
+	font-size: 2em;
 }
 
 
@@ -23,8 +35,8 @@
 }
 
 #newgroup{
-	text-align: center;
 	padding: 20px;
+	background-color: rgba(145,170,157, 1)
 }
 
 .membersbox {
@@ -41,9 +53,7 @@
 
 
 #choresection{
-	background-color: rgba(122,20,45, .5);
-	margin-top: 10px;
-
+	background-color: rgba(145,170,157, .8);
 }
 .members{
 	display: inline-block;

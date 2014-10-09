@@ -1,18 +1,26 @@
 <div class="container">
 
 	<h1><%= @user.name.humanize %></h1>
-
+	
 
 	<!-- Chorelist -->
 	<% if current_user.group_pledged %>
-	<div class="row" id="choresection">
+	<div class ="row" >
+
+	<div class=" right panel small-12 large-6">
+			<% if @user.quota == 1000 %>
+				<h1>You aint done shit!</h1>
+			<% else %>
+		<input value=<%= @user.quota / 10 %> data-width="50%" class="dial" data-angleArc=250 data-angleOffset=-125 data-readOnly=true > 
+			<% end %>	
+	</div>
 		<% @chores_available.each do |c| %>
-			<div class=" members  small-12 left column">
-				<p><strong>Points:</strong> <%= c.points %></p>
-				<p><strong>Chores:</strong> 
-				   <%= link_to group_chore_chore_instances_path(current_user.group_pledged.id, c.id), method: :post do %>
-					   <%= c.name %> <br>
-				   <% end %></p>
+			<div id="choresection" class=" members  left small-12 large-6  ">
+				<p> <%= c.points %></p>
+				<p><%= link_to group_chore_chore_instances_path(current_user.group_pledged.id, c.id), method: :post do %>
+					   <%= c.name %> 
+				   <% end %>
+				</p>
 				<p><strong>Description: </strong><%= c.description %></p>
 			</div>
 		<% end %>
