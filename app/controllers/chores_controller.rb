@@ -3,7 +3,7 @@ class ChoresController < ApplicationController
  before_action :groupfinder, only: [:index, :create, :new, :show]
 
 def index
-	@chores = Chore.all
+	@chores = Chore.all 
 end
 
 def show 
