@@ -1,11 +1,15 @@
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
+        <%if current_user %>
             <% if current_user.role== 'Admin' %> 
               <%= link_to (image_tag 'logo.png', id: "logo"), groups_path %>
             <% else %>
               <%= link_to (image_tag 'logo.png', id: "logo"), user_path(@current_user) %>
-            <% end%>  
+            <% end%> 
+        <% else %>
+            <%= image_tag "logo.png" %>
+        <% end%>   
     </li>
     <!-- hamburger icon -->
     <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
