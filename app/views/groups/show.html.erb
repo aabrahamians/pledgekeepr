@@ -6,15 +6,18 @@
 	<!-- memeberbox -->
 	<div class="row">
 		<div class="membersbox clearfix">
-			<div class=" panel left small-12 medium-6 column">
-				<% @group.pledges.each do |g| %>
+			<div class="left small-12 medium-6 column">
+				<div class="row">
+					<% @group.pledges.each do |g| %>
 
-				<!-- pledge names + tooltip-->
-				<div id="membersname">
-					<span data-tooltip class="has-tip" title="<%= (g.quota / 10 )%>% remaining"><p><%= g.name.titleize %>
-						<%= link_to 'X', g, method: :delete, style: 'color:red;', data: { confirm: 'Are you sure?' } %></p></span>
+					<!-- pledge names + tooltip-->
+				
+						<div id="membersname" class=" small-4">
+							<span data-tooltip class="has-tip" title="<%= (g.quota / 10 )%>% remaining"><%= g.name.titleize %>
+								<%= link_to 'X', g, method: :delete, style: 'color:red;', data: { confirm: 'Are you sure?' } %></span>
+						</div>
+					<% end %>
 				</div>
-				<% end %>
 				<!-- end names and tooltip -->
 			</div>
 
