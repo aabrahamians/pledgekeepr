@@ -1,14 +1,14 @@
 // Place all the styles related to the groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+@import url(http://fonts.googleapis.com/css?family=Pragati+Narrow);
 
 .groupbox {
 	border: 2px solid black;
 	border-radius: 10%;
 	min-width:150px;
 	// max-width:180px;
-	background-color: rgba(209,219,189,1);
+	background-color: rgba(207, 205, 174, 0.67);
 	display:inline-block;
 	overflow-y: scroll;
 	// for medium and up
@@ -22,7 +22,10 @@
 	font-size: 4em;
 	text-align: center;
 }
-
+#groupname{
+	font-family: helvetica;
+	font-weight: bold;
+}
 #adminbanner{
 	display: block;
 	padding: 5px;
@@ -30,8 +33,10 @@
 }
 
 
-#groupname{
-	background-color: rgba(0,0,0,.2);
+#groupnames{
+	color:rgb(197, 94, 94);
+	font-weight: bold;
+	font-family: 'Pragati Narrow', sans-serif;
 }
 
 #newgroup{
@@ -64,7 +69,22 @@
 	// margin: 2px 4px;
 	overflow-x: scroll;
 	max-height: 80px;
-	
+-moz-box-shadow:
+0px -1px 3px rgba(190,255,255,0.5), /*top external highlight*/
+2px 3px 3px rgba(0,0,0,0.2), /*bottom external shadow*/
+inset 0 -1px 1px rgba(0,0,0,0.5), /*bottom internal shadow*/
+inset 0 1px 1px rgba(255,255,255,1); /*top internal highlight*/
+-webkit-box-shadow:
+0px -1px 3px rgba(190,255,255,0.5), /*top external highlight*/
+2px 3px 3px rgba(0,0,0,0.2), /*bottom external shadow*/
+inset 0 -1px 1px rgba(0,0,0,0.5), /*bottom internal shadow*/
+inset 0 1px 1px rgba(255,255,255,1); /*top internal highlight*/
+box-shadow:
+0px -1px 3px rgba(190,255,255,0.5), /*top external highlight*/
+2px 3px 3px rgba(0,0,0,0.2), /*bottom external shadow*/
+inset 0 -1px 1px rgba(0,0,0,0.5), /*bottom internal shadow*/
+inset 0 1px 1px rgba(255,255,255,1); /*top internal highlight*/
+
 	@media only screen and 
 	(min-width:  64.063em) and 
 	(max-width: 120em) { 

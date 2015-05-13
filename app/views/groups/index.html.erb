@@ -5,9 +5,9 @@
 		
 		<!-- list of managed groups -->
 			<% @groups.each do |g| %>
-				<div class="groupbox small-12 medium-2">
+				<div class="groupbox small-12 medium-3">
 					<%= link_to group_path(g) do %>
-					<h3><%= g.name %></h3>
+					<h3 id="groupnames"><%= g.name.titleize %></h3>
 					
 
 					<!-- Tooltip -->
@@ -15,7 +15,7 @@
 					<!-- end of tooltip -->
 					<%end%>
 					<!-- Group info box -->
-						<div class="members  small-12  ">
+						<div class="members  small-12 medium-12">
 							<%if g.pledges.count == 0 %>
 							<p>Looks like no one has joined yet... Invite poeple! </p>
 							<% end %>
