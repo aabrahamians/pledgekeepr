@@ -26,13 +26,10 @@ end
 
 def destroy
 		@chore= Chore.find(params[:id])
-	if (@chore.user_id == current_user.id)
+	
 		@chore.destroy
 		redirect_to  group_path
-	else 
 
-		redirect_to  group_path
-	end
 
 end
 

@@ -1,7 +1,13 @@
 <div class="container" >
 	<div class="row text-center">
 		<!-- Admin banner -->
-		<span id="adminbanner"><%= current_user.name.titleize %>'s managed groups</span>
+		<span id="adminbanner"><%= current_user.name.titleize %>'s  
+			Managed
+			<% if @groups.count <= 1%> 
+				Group 
+			<% else %>
+			 	Groups 
+			<%end%></span>	
 		
 		<!-- list of managed groups -->
 			<% @groups.each do |g| %>
@@ -29,7 +35,7 @@
 		
 			<div class="groupbox text-center" id="newgroup">
 				<a href="#" data-reveal-id="myModal">
-					<h6>Create New Group</h6>
+					<h6 id="create">Create New Group</h6>
 					<i class="fi-plus"></i>
 				</a>
 				<div id="myModal" class="reveal-modal small text-center" data-reveal>

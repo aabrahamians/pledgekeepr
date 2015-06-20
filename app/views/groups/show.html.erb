@@ -1,13 +1,13 @@
 <div class="container">
 
-	<h1 id="groupname" class="small-12 text-center"><%= @group.name %></h1>
-
+	<h1 id="groupname" class="small-12 text-center" ><%= @group.name %></h1> 
+	<div class="text-center">Invite more people to the group! Use <%= @group.id %> as the invite code</div>
 
 	<!-- memeberbox -->
 	<div class="row">
 		<div class="membersbox clearfix">
-			<div class="left small-12 medium-6 column">
-				<div class="row">
+			<div class="left small-12 medium-12 column">
+				<div class="row" style="border:2px solid">
 					<% @group.pledges.each do |g| %>
 
 					<!-- pledge names + tooltip-->
@@ -36,18 +36,34 @@
 	<!-- end memberbox -->
 	
 	<!-- Chorelist -->
-	<div class="row" id="choresection">
+	<br><br>
+	<div class="row small-12 medium-4 center choresTitle text-center"><h2>Chores</h2></div>
+	<script>
+	$(".choresTitle").click(function(event) {
+		$("#choresection").slideToggle(400);
+	});
+		</script>
+	<style>
+	.choresTitle h2{ background: rgba(0,0,0, .5); transition: background 3s, width 4s; width:500px;}
+	.choresTitle h2:hover{ background: rgba(45,0,0, .5); width:200px;}
+
+		</style>
+	<div class="row" id="choresection" style="display:none;">
 		<% @group.chores.each do |c| %>
-			<div class=" members  small-12 left column">
+			<div class=" members  large-2 left column">
 				<p><strong>Points:</strong> <%= c.points %></p>
 				<p><strong>Chores:</strong> <%= c.name %> (<%= c.points %>)</p>
 				<p><strong>Description: </strong><%= c.description %></p>
+				<%= link_to 'Delete chore', group_chore_path(@group, c)  , method: :delete, class: 'button alert expand', data: { confirm: 'Are you sure?' } %>
+				
 			</div>
 		<% end %>
+
 	</div>
 	<!-- end Chorelist -->
 
 	<!-- button and modal for reveal-->
+	<br>
 	<div>
 		<button class="button success " style="margin-left: 50%;" data-reveal-id="addchore" >Add Chore</button>
 	</div>

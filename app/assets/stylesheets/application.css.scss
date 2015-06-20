@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require foundation_and_overrides
+ *= require animate.css
  *= require_tree .
  */
 html{
@@ -28,6 +29,9 @@ html{
 	margin: 10px;
 	width: 268px;
 	height: 44px;
+}
+li.name img{
+	margin-top:10px;
 }
 
 
