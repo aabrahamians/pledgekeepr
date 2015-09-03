@@ -11,10 +11,16 @@
 	// box-shadow: 1em 2em 2em #333333;
 }
 
+.banner{
+			    height: 87vh;
+    background: linear-gradient(to bottom, rgba(45, 99, 180, 0.86) 0%, rgba(157, 161, 165, 0.07) 37%), url(/assets/bshake.jpg) center center no-repeat fixed;
+    background-size: cover;
 
 
+	}
 .accordionlogin{
 text-align: center;
+background-color:red;
 font-weight: bold;
 }
 
@@ -32,10 +38,76 @@ font-weight: bold;
 
 }
 
-.introbox{
-	min-height:224px;
-		
+.welcomeExplain{
+	width:100%;
+	padding-top:30px;
+	.admin{
+		border-top:1px solid black;
+		border-bottom:1px solid black;
+		padding: 0px 10px;
+	}
+	.admin >h1{
+		text-align: center;
+		position:relative;
+		right:10px;
+		color:#565a5c;
+		margin-bottom:40px;
+		width:50%;
+		color:white;
+		background:black;
+		border-radius: 10%;
+
+	}
+	.pledge >h1{
+		text-align: center;
+		position:relative;
+		float:right;
+		right:-10px;
+		color:#565a5c;
+		margin-bottom:40px;
+		width:50%;
+		color:white;
+		background:black;
+		border-radius: 10%;
+	}
+	.howto > li {
+		border:2px solid black;
+		background-color:gray;
+	}
+	.howitworks{
+		text-align:center;
+	
+		div{
+			position:relative;
+			
+			font-size:1.1em;
+			font-weight: bold;	
+		}
+	}
+	.howitworks > .admin >  p {
+		color:#565a5c;
+	}
+	.howitworks > .admin > ul > li >img {
+		background-color:rgba(93, 97, 100, 0.2);
+		width:60%;
+	}
+	.howitworks > .admin > ul > li >span{
+		top:423px;
+		color:white;
+		font-size:1.4em;
+		font-weight: bold;
+		position:relative;
+	}
 
 }
-@media screen and (min-width: 40.063em) 
-  and (max-width: 64em) {  max-height: 150px;} 
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em){
+			
+	.banner{	height:500px !important;background: linear-gradient(to bottom, rgba(45, 99, 180, 0.86) 0%, rgba(157, 161, 165, 0.07) 37%), url(/assets/bshake.jpg) center -278px no-repeat fixed;}
+	.welcomeExplain > .howitworks> h1{width:350px !important;}
+	
+	.welcomeExplain .howitworks > .admin> ul > li > span {top: 363px !important; font-size: 1.3em !important;}
+   .howitworks> .admin > ul>li {height: 500px;}
+}
+@media only screen and (max-width: 40.063em){.howitworks> .admin> ul>li {height: 430px;}}
+@media only{.howitworks > .admin > ul > li {height:430px !important;}}

@@ -4,20 +4,17 @@
 @import url(http://fonts.googleapis.com/css?family=Pragati+Narrow);
 
 .groupbox {
-	border: 2px solid black;
+	border: 1px dashed gray;
 	border-radius: 10%;
 	min-width:150px;
 	// max-width:180px;
-	background-color: rgba(207, 205, 174, 0.67);
+	background-color: #89BBED;
 	display:inline-block;
 	overflow-y: scroll;
-	
-	// for medium and up
-		@media only screen and 
-		(min-width:  40.063em) and 
-		(max-width: 120em) { 
-		height: 200px;
-	} 
+	h4{
+		display:inline-block;
+		margin-top:-4px;
+	}
 }
 
 
@@ -33,6 +30,8 @@
 	font-weight: bold;
 }
 #adminbanner{
+	margin-top:20px;
+	margin-bottom:20px;
 	display: block;
 	padding: 5px;
 	font-size: 2.5em;
@@ -47,11 +46,11 @@
 
 #newgroup{
 	padding: 20px;
-	background-color: rgba(145,170,157, 1)
+	background-color: #489ABC;
 }
 
 .membersbox {
-	border: 2px solid black;	
+	border: 1px solid black;	
 }
 #membersname{
 	display: inline-block;
@@ -72,7 +71,7 @@
 .members{
 	display: inline-block;
 	font-size: 1em;
-	border: 1px solid black;
+	color:#333;
 	// margin: 2px 4px;
 	overflow-x: scroll;
 	max-height: 80px;

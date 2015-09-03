@@ -1177,23 +1177,24 @@
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: rgba(62,96,111,1);
+$topbar-bg-color: rgba(255,255,255,1);
 // $topbar-bg-color: #333;
+$topbar-bg: $topbar-bg-color;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
 // $topbar-height: 45px;
-$topbar-height: 68px;
+$topbar-height: 80px;
 // $topbar-margin-bottom: 0;
-
+$topbar-margin-bottom: 0;
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: $font-weight-normal;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: #333;
-// $topbar-dropdown-link-color: #fff;
-// $topbar-dropdown-link-bg: #333;
+ // $topbar-dropdown-bg: red;
+ // $topbar-dropdown-link-color: red;
+ // $topbar-dropdown-link-bg:red;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;
@@ -1230,7 +1231,7 @@ $topbar-height: 68px;
 // $topbar-menu-link-font-size: rem-calc(13);
 // $topbar-menu-link-weight: $font-weight-bold;
 // $topbar-menu-link-color: #fff;
-// $topbar-menu-icon-color: #fff;
+$topbar-menu-icon-color: black;
 // $topbar-menu-link-color-toggled: #888;
 // $topbar-menu-icon-color-toggled: #888;
 

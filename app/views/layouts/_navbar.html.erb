@@ -1,14 +1,15 @@
 <nav class="top-bar" data-topbar role="navigation">
+<link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
   <ul class="title-area">
     <li class="name">
         <%if current_user %>
             <% if current_user.role== 'Admin' %> 
-              <%= link_to (image_tag 'logo.png', id: "logo"), groups_path %>
+              <%= link_to "Pledge Keeper", groups_path %>
             <% else %>
-              <%= link_to (image_tag 'logo.png', id: "logo"), user_path(@current_user) %>
+              <%= link_to "Pledge Keeper", user_path(@current_user) %>
             <% end%> 
         <% else %>
-            <%= image_tag "logo.png" %>
+            <p style="margin:0px;font-family: 'Courgette', cursive;color:#5DB7D9;font-size:2.5em; margin-top:10px;">Pledge Keeper</p>
         <% end%>   
     </li>
     <!-- hamburger icon -->
@@ -50,7 +51,7 @@
       <dd class="accordion-navigation">
         <a href="#panel3" class="accordionlogin">Sign-up As Pledge</a>
         <div id="panel3" class="content">
-          <%= render partial: 'users/forms1', :controller=>"users", :action =>"new" %>
+          <%= render partial: 'users/pledge', :controller=>"users", :action =>"new" %>
         </div>
       </dd>
     </dl>

@@ -15,27 +15,55 @@
  */
 html{
 	font-size: 16px;
-	background-color:rgba(252,255,245,1);
+	
+
 }
 
-.navlinks{
-	font-weight: bold;
-	text-decoration: none;
-	color: white;
-	float: right;
-	background-color:rgba(25,53,65,1);
+a.navlinks{
+	color:gray !important;
+	font-size:1em !important;
+	background: #ffffff;/* Old Browsers */
+background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 70%, #ededed 100%); /* FF3.6+ */
+background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffffff), color-stop(70%, #f6f6f6), color-stop(100%, #ededed));/* Chrome, Safari4+ */
+background: -webkit-linear-gradient(top, #ffffff 0%, #f6f6f6 70%, #ededed 100%) !important; /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ffffff 0%, #f6f6f6 70%, #ededed 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ffffff 0%, #f6f6f6 70%, #ededed 100%); /* IE 10+ */
+background: linear-gradient(to bottom, #ffffff 0%, #f6f6f6 70%, #ededed 100%);/* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );/* IE6-9 */
+	
 }
-#logo {
-	margin: 10px;
-	width: 268px;
-	height: 44px;
+nav.top-bar{
+	background: #ffffff;/* Old Browsers */
+background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 70%, #ededed 100%); /* FF3.6+ */
+background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffffff), color-stop(70%, #f6f6f6), color-stop(100%, #ededed));/* Chrome, Safari4+ */
+background: -webkit-linear-gradient(top, #ffffff 0%, #f6f6f6 70%, #ededed 100%) !important; /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ffffff 0%, #f6f6f6 70%, #ededed 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ffffff 0%, #f6f6f6 70%, #ededed 100%); /* IE 10+ */
+background: linear-gradient(to bottom, #ffffff 0%, #f6f6f6 70%, #ededed 100%);/* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );/* IE6-9 */
+	
 }
-li.name img{
-	margin-top:10px;
+.top-bar .toggle-topbar.menu-icon a{
+	color:gray !important;
 }
-
+.title-area>.name>a{
+	margin:10px 0px 0px 0px;
+	font-family: 'Trade Winds' cursive;
+	color:#5DB7D9;
+	font-size:2.5em;
+	
+}
+.title-area{
+	margin-left:20px !important;
+}
+.welcomeExplain{
+	width:100%;
+	min-height:500px;
+	background-color: #fff;
+}
 
 footer {
+	display: none;
 	position: fixed;
 	background-color: rgba(62,96,111,1);
 	font-size: 1em;
@@ -49,7 +77,12 @@ footer {
     left: 0px;
     right: 0px;
 }
-
+.fullwidth{
+   	width:100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
 
 
 

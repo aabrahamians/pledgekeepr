@@ -1,47 +1,42 @@
-<div class="container">
-	<div class="row">
-		<div id="intro"  class="large-10 large-offset-1  text-center">
-			<h1>PledgeKeeper is a new approach to organizing tasks within a group!</h1>
-			<h3>Giving people the benefit of the doubt and allowing them to rise to the situation! </h3>
-			<h3>Promote a healthy self motivating enviornment to organize and get tasks done.</h3>
-		</div>
-	</div>
 
+<div class="Welcome">
+
+	<div class="banner clearfix">
 		
-	<div class = "row text-center ">
-		<!-- Admin sign up box -->
-		<div class=" small-12 medium-6 large-5 login  columns introbox  ">
-				<h2>Admin</h2>
-				<p>Sign up now to create a private group... Share your invitation code to add pledgekeepers and get productive!</p>	
-			<button class="button alert small round"  data-reveal-id="adminmodal" >
-					Join As admin.
-			</button>
-				<!-- Reveal modal -->
-			<div id="adminmodal" class="reveal-modal" data-reveal>
-					<%= render partial: 'users/forms', :controller=>"chores", :action =>"new" %>
-
-					<a class="close-reveal-modal"></a>
-				<!-- end reveal -->	
-			</div>
-		</div>
-		<!-- end admin sign up box -->
-
-		<!-- Pledge sign up box -->
-		<div class=" small-12 medium-6 large-5  login  columns introbox">
-				<h2>Pledge</h2>
-				<p>Did you recieve an invidation code? Enter the code when you register to be in your group!</p>
-				
-				<button class="button alert small round"  data-reveal-id="pledgemodal" >Join As pldege.</button>
-		<!-- Reveal modal -->
-			<div id="pledgemodal" class="reveal-modal" data-reveal>
-				<%= render partial: 'users/forms1', :controller=>"chores", :action =>"new" %>
-
-			<a class="close-reveal-modal"></a>
-		<!-- end reveal -->
-			</div>
-		</div>
-		<!-- end pledge sign up box -->
-
 	</div>
+
+	<div class="sticky">
+		<%= render "layouts/navbar" %>
+	</div>	
+	<div class="welcomeExplain">
+		<div class="howitworks">
+			<div class="besttool">
+				<p id="introstatement">Pledge Keeper is the best tool to helps better organize responsibilities in groups!</p>
+			</div>
+				<div class="admin">
+				<h1>How To Start As An Admin</h1>
+					<ul class="small-block-grid-1 medium-block-grid-3 ">
+					  <li><div>Make A Group</div> <br>
+					  
+					  <%= image_tag("groups.png") %>
+					  </li>
+					  <li><div>Invite Members</div> <br>
+					 
+					   <%= image_tag("invite.png") %>
+					  </li>
+					  <li><div>Add Tasks</div><br>
+					  
+					   <%= image_tag("task.png") %>
+					  </li>
+					</ul>
+			</div>	
+
+			<div class="pledge" style="width:100%; height:200px;">
+			<h1>As A Pledge</h1>
+				
+			</div>
+		</div>
+	</div>
+
 
 </div>

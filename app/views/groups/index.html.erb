@@ -1,3 +1,4 @@
+<%= render "layouts/navbar" %>
 <div class="container" >
 	<div class="row text-center">
 		<!-- Admin banner -->
@@ -8,7 +9,30 @@
 			<% else %>
 			 	Groups 
 			<%end%></span>	
-		
+		<div class="groupbox text-center" id="newgroup">
+				<a href="#" data-reveal-id="myModal">
+					<h6 id="create">Create New Group</h6>
+					<i class="fi-plus"></i>
+				</a>
+				<div id="myModal" class="reveal-modal small text-center" data-reveal>
+					
+					
+						<%= form_for Group.new do |u| %>
+							<h3><strong>Name The Group</strong></h3>
+							<div class="small-6  small-offset-3 columns">
+								<form role="form">
+									<div class="form-group ">
+									<%= u.text_field :name, :placeholder => " Group Name" %>
+									<%= u.submit "Create", class: 'button tiny success' %>
+									</div>
+								</form>
+							</div>
+						<% end %>
+			
+					<a class="close-reveal-modal"></a>
+				</div>
+			</div>
+			<br>
 		<!-- list of managed groups -->
 			<% @groups.each do |g| %>
 				<div class="groupbox small-12 medium-3">
@@ -17,7 +41,7 @@
 					
 
 					<!-- Tooltip -->
-					<span data-tooltip class="has-tip" title="Invite Pledges to your group using this invitaion code"><h4><%= g.id %></h4></span>
+					<span data-tooltip class="has-tip" title="Invite Pledges to your group using this invitaion code">Invite Code:<h4> &nbsp;<%= g.id %></h4></span>
 					<!-- end of tooltip -->
 					<%end%>
 					<!-- Group info box -->
@@ -33,29 +57,7 @@
 					<!-- end of group info -->
 			<% end %>
 		
-			<div class="groupbox text-center" id="newgroup">
-				<a href="#" data-reveal-id="myModal">
-					<h6 id="create">Create New Group</h6>
-					<i class="fi-plus"></i>
-				</a>
-				<div id="myModal" class="reveal-modal small text-center" data-reveal>
-					
-					
-						<%= form_for Group.new do |u| %>
-							<h3><strong>Let's get started</strong></h3>
-							<div class="small-6  small-offset-3 columns">
-								<form role="form">
-									<div class="form-group ">
-									<%= u.text_field :name, :placeholder => " Group Name" %>
-									<%= u.submit "Create", class: 'button tiny success' %>
-									</div>
-								</form>
-							</div>
-						<% end %>
 			
-					<a class="close-reveal-modal"></a>
-				</div>
-			</div>
 		<!-- end of managed grops -->
 	</div>
 </div>
